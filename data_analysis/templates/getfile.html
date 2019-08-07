@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="POST" action="" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+        <div class ="form-group">
+            {{ form.text(class="form-control-file") }}
+            {% if form.text.errors %}
+                {% for error in form.text.errors %}
+            <span class="text-danger">{{ error }}</span></br>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </fieldset>
+    <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+</form>
+
+</body>
+</html>
